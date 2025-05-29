@@ -4,6 +4,7 @@ import geopandas as gpd
 import osmnx as ox
 import osmium
 import geocube
+from geocube.api.core import make_geocube
 from botocore.exceptions import ClientError
 import r5py
 os.chdir('C:/Users/tgwon/wri/cif/cities-cif')
