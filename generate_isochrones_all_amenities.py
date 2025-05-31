@@ -7,6 +7,7 @@ import geocube
 from geocube.api.core import make_geocube
 from botocore.exceptions import ClientError
 import r5py
+from geocube.rasterize import rasterize_points_griddata
 os.chdir('C:/Users/tgwon/wri/cif/cities-cif')
 sys.path.append('C:/Users/tgwon/wri/cif/cities-cif')
 os.environ['GOOGLE_APPLICATION_USER'] = 'script-service-account@wri-gee.iam.gserviceaccount.com'
@@ -301,7 +302,7 @@ for amenity_info in AMENITIES:
                         threshold = travel_time * travel_speed
                         unit = 'meters'
                     else:
-                        threshold = travel_times
+                        threshold = travel_time
                         unit = 'minutes'
                     oname = f'{amenity_name}__{city_id}__{travel_mode_name}__{threshold}__{unit}.tif'
 
