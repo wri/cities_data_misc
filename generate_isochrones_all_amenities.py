@@ -304,7 +304,7 @@ for amenity_info in AMENITIES:
                     else:
                         threshold = travel_time
                         unit = 'minutes'
-                    oname = f'{amenity_name}__{city_id}__{travel_mode_name}__{threshold}__{unit}.tif'
+                    oname = f'{amenity_name}__{city_id}__{level_name}__{travel_mode_name}__{threshold}__{unit}.tif'
 
                     geo_grid.rio.to_raster(f'{LOCAL_ISOCHRONE_PREFIX}/{oname}', engine='GeoTIFF')
                     upload_s3(SESSION, f'{LOCAL_ISOCHRONE_PREFIX}/{oname}', BUCKET, f'{S3_ISOCHRONE_PREFIX}/{oname}')
